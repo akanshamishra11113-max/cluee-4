@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Page</title>
+    <style>
+        /* Make the page take full height and center content */
+        body {
+            display: flex;
+            justify-content: center;  /* horizontal center */
+            align-items: center;      /* vertical center */
+            height: 100vh;            /* full viewport height */
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* optional light background */
+        }
+
+        /* Container to stack elements vertically */
+        .container {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #008cba;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #008cba;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #005f75;
+        }
+
+        #feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Question:</h2>
+        <p>ChatGPT belongs to _____ AI</p>
+
+        <input type="text" id="answer" placeholder="Enter your answer">
+        <br>
+        <button onclick="checkAnswer()">Submit</button>
+
+        <p id="feedback" style="color:red;"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.trim();
+            if(userAnswer === "Generative") {
+                // Redirect to the clue page
+                window.location.href = "clue 4.html";
+            } else {
+                document.getElementById('feedback').innerText = "Wrong answer! Try again.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
